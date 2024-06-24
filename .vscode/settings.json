@@ -8,6 +8,8 @@
     "editor.tabSize": 4,
     //-------- Files configuration --------
     "files.exclude": {
+        ".exe":true,
+        ".msi":true,
         ".editorconfig":true,
         ".gitattributes":true,
         ".github":true,
@@ -33,6 +35,7 @@
     "files.encoding": "utf8",
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
+    "files.defaultLanguage": "powershell",
     //-------- PowerShell configuration --------
     "powershell.codeFormatting.addWhitespaceAroundPipe": true,
     "powershell.codeFormatting.autoCorrectAliases": true,
@@ -49,4 +52,20 @@
     "powershell.powerShellDefaultVersion": "Windows PowerShell (x64)",
     "powershell.scriptAnalysis.settingsPath": ".\\.vscode\\PSScriptAnalyzerSettings.psd1",
     "dotnet.preferCSharpExtension": true
+    //-------- Default Terminal Profile --------
+    "terminal.integrated.profiles.windows": {
+        "PowerShell Devops": {
+            "path": "C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "source": "PowerShell",
+            "args": [
+                "-NoLogo",
+                "-NoExit",
+                "-ExecutionPolicy",
+                "RemoteSigned",
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell Devops",
+
+
 }
