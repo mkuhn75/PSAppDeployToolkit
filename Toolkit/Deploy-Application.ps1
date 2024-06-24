@@ -106,15 +106,15 @@ Try {
     ##* VARIABLE DECLARATION
     ##*===============================================
     ## Variables: Application
-    [String]$appVendor = ''
-    [String]$appName = ''
-    [String]$appVersion = ''
-    [String]$appArch = ''
+    [String]$appVendor = 'Microsoft'
+    [String]$appName = 'Remote Desktop WebRTC'
+    [String]$appVersion = '1.50.2402.29001'
+    [String]$appArch = 'x64'
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = 'XX/XX/20XX'
-    [String]$appScriptAuthor = '<author name>'
+    [String]$appScriptDate = '24/06/2024'
+    [String]$appScriptAuthor = 'Marc Kuhn'
     ##*===============================================
     ## Variables: Install Titles (Only set here to override defaults set by the toolkit)
     [String]$installName = ''
@@ -205,7 +205,7 @@ Try {
         }
 
         ## <Perform Installation tasks here>
-
+        Execute-MSI -Action 'Install' -Path "MsRdcWebRTCSvc_HostSetup_1.50.2402.29001_x64.msi"
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -232,6 +232,7 @@ Try {
         Show-InstallationProgress
 
         ## <Perform Pre-Uninstallation tasks here>
+        Execute-MSI -Action 'Uninstall' -Path '{97631453-DD6D-4789-9C86-76E59923F161}'
 
 
         ##*===============================================
