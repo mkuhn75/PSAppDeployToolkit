@@ -34,36 +34,6 @@
 			}
 		},
 		{
-			"label": "Test Install",
-			"type": "shell",
-			"command": "powershell",
-			"args": [
-				"-ExecutionPolicy",
-				"Bypass",
-				"-File",
-				"${workspaceFolder}\\.vscode\\Install.ps1"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
-		},
-		{
-			"label": "Test Uninstall",
-			"type": "shell",
-			"command": "powershell",
-			"args": [
-				"-ExecutionPolicy",
-				"Bypass",
-				"-File",
-				"${workspaceFolder}\\.vscode\\Uninstall.ps1"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			}
-		},
-		{
 			"label": "AppDeployToolkitHelp",
 			"type": "shell",
 			"command": "powershell",
