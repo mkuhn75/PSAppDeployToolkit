@@ -205,7 +205,6 @@ Try {
         }
 
         ## TODO <Perform Installation tasks here>
-        Execute-MSI -Action 'Install' -Path "MsRdcWebRTCSvc_HostSetup_1.50.2402.29001_x64.msi"
 
         ##*===============================================
         ##* POST-INSTALLATION
