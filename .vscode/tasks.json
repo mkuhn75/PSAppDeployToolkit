@@ -19,6 +19,21 @@
 			}
 		},
 		{
+			"label": "Sandbox",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-ExecutionPolicy",
+				"Bypass",
+				"-File",
+				"${workspaceFolder}\\.vscode\\Sandbox.ps1"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
 			"label": "Test Install",
 			"type": "shell",
 			"command": "powershell",
