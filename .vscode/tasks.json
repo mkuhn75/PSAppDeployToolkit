@@ -2,16 +2,29 @@
 	// See https://go.microsoft.com/fwlink/?LinkId=733558
 	// for the documentation about the tasks.json format
 	"version": "2.0.0",
+	"Windows": {
+		"options": {
+			"shell": {
+				"executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+				"args": [
+					"-NoProfile",
+					"-ExecutionPolicy",
+					"Bypass",
+					"-Command"
+				]
+			}
+		}
+	},
 	"tasks": [
 		{
-			"label": "Build",
+			"label": "BUILD IntuneWin",
 			"type": "shell",
 			"command": "powershell",
 			"args": [
 				"-ExecutionPolicy",
 				"Bypass",
 				"-File",
-				"${workspaceFolder}\\.vscode\\Build.ps1"
+				"${cwd}/.vscode/build.ps1"
 			],
 			"group": {
 				"kind": "build",
@@ -19,14 +32,14 @@
 			}
 		},
 		{
-			"label": "Sandbox",
+			"label": "TEST in Sandbox",
 			"type": "shell",
 			"command": "powershell",
 			"args": [
 				"-ExecutionPolicy",
 				"Bypass",
 				"-File",
-				"${workspaceFolder}\\.vscode\\Sandbox.ps1"
+				"${cwd}/.vscode/sandbox.ps1"
 			],
 			"group": {
 				"kind": "build",
@@ -34,21 +47,36 @@
 			}
 		},
 		{
-			"label": "AppDeployToolkitHelp",
+			"label": "UPLOAD to Intune",
 			"type": "shell",
 			"command": "powershell",
 			"args": [
 				"-ExecutionPolicy",
 				"Bypass",
 				"-File",
-				"${workspaceFolder}\\Toolkit\\AppDeployToolkit\\AppDeployToolkitHelp.ps1"
+				"${cwd}/.vscode/UploadToIntune.ps1"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "OPEN AppDeployToolkitHelp",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-ExecutionPolicy",
+				"Bypass",
+				"-File",
+				"${cwd}\\Toolkit\\AppDeployToolkit\\AppDeployToolkitHelp.ps1"
 			],
 			"group": {
 				"kind": "build",
 				"isDefault": true
 			},
 			"presentation": {
-				"close": false
+				"close": true
 			}
 		}
 	]
