@@ -3,6 +3,8 @@
 
 # Copy Resources
 Copy-Item -Path ".vscode\$LogonCommand" -Destination "$Win32App\" -Recurse -Force -Verbose -ErrorAction Ignore
+Copy-Item -Path ".\.vscode\CMTrace.exe" -Destination "$Win32App\" -Recurse -Force -Verbose -ErrorAction Ignore
+Copy-Item -Path ".\.vscode\Logs.lnk" -Destination "$Win32App\" -Recurse -Force -Verbose -ErrorAction Ignore
 
 # Prepare Sandbox
 @"
