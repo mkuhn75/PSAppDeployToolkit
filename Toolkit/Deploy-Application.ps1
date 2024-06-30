@@ -106,14 +106,14 @@ Try {
     ##* VARIABLE DECLARATION
     ##*===============================================
     ## TODO Variables: Application
-    [String]$appVendor = 'Microsoft'
-    [String]$appName = 'Remote Desktop WebRTC'
-    [String]$appVersion = '1.50.2402.29001'
+    [String]$appVendor = 'Mozilla'
+    [String]$appName = 'Firefox ESR'
+    [String]$appVersion = '115.12.0'
     [String]$appArch = 'x64'
     [String]$appLang = 'EN'
     [String]$appRevision = '01'
     [String]$appScriptVersion = '1.0.0'
-    [String]$appScriptDate = '24/06/2024'
+    [String]$appScriptDate = '30/06/2024'
     [String]$appScriptAuthor = 'Marc Kuhn'
     ##*===============================================
     ## TODO Variables: Install Titles (Only set here to override defaults set by the toolkit)
@@ -250,7 +250,7 @@ Try {
         }
 
         ## TODO <Perform Uninstallation tasks here>
-
+        Execute-Process -FilePath “$envProgramFiles(x86)\Mozilla Firefox\uninstall\helper.exe” -Parameters '/S' -WindowStyle Hidden -IgnoreExitCodes ‘3010’
 
         ##*===============================================
         ##* POST-UNINSTALLATION
