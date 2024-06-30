@@ -205,6 +205,7 @@ Try {
         }
 
         ## TODO <Perform Installation tasks here>
+        Execute-Process -Path 'Firefox Setup 115.12.0esr.exe' -Parameters '/S'
 
         ##*===============================================
         ##* POST-INSTALLATION
@@ -212,6 +213,7 @@ Try {
         [String]$installPhase = 'Post-Installation'
 
         ## TODO <Perform Post-Installation tasks here>
+
 
         ## TODO Display a message at the end of the install
         # If (-not $useDefaultMsi) {
